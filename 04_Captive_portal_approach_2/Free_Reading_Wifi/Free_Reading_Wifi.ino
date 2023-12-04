@@ -1,4 +1,4 @@
-// Captive portal with (arduino) OTA + SPIFFS
+// Captive portal with (arduino) OTA + LittleFS
 // Adapted from https://git.vvvvvvaria.org/then/ESP8266-captive-ota-spiffs
 
 #include <Arduino.h>
@@ -7,7 +7,7 @@
 #include <WiFiUdp.h>
 #include <ESP8266WebServer.h>
 #include "./DNSServer.h" // Dns server
-#include <FS.h> // SPIFFS
+#include <LittleFS.h> // LittleFS
 
 DNSServer dnsServer;
 const byte DNS_PORT = 53;
@@ -36,7 +36,7 @@ void setup() {
   Serial.println(WiFi.softAPIP());
   
   //File system begin
-  SPIFFS.begin();
+  LittleFS.begin();
 
 
    //redirect all traffic to index.html
@@ -76,15 +76,15 @@ else if(filename.endsWith(".gz")) return "application/x-gzip";
 return "text/plain";
 }
 
-//Given a file path, look for it in the SPIFFS file storage. Returns true if found, returns false if not found.
+//Given a file path, look for it in the LittleFS file storage. Returns true if found, returns false if not found.
 bool handleFileRead(String path){
 if(path.endsWith("/")) path += "index.html";
 String contentType = getContentType(path);
 String pathWithGz = path + ".gz";
-if(SPIFFS.exists(pathWithGz) || SPIFFS.exists(path)){
-  if(SPIFFS.exists(pathWithGz))
+if(LittleFS.exists(pathWithGz) || LittleFS.exists(path)){
+  if(LittleFS.exists(pathWithGz))
     path += ".gz";
-  File file = SPIFFS.open(path, "r");
+  File file = LittleFS.open(path, "r");
   size_t sent = server.streamFile(file, contentType);
   file.close();
   return true;
