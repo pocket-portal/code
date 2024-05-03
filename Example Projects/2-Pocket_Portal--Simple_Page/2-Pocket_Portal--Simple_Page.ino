@@ -7,6 +7,7 @@
 #include <WiFiUdp.h>
 #include <ESP8266WebServer.h>
 #include "./DNSServer.h" // Dns server
+// #include <FS.h> // SPIFFS -> deprecated. All instances of SPIFFS have been replaced with LITTLEFS
 #include <LittleFS.h> // LittleFS
 
 DNSServer dnsServer;
@@ -15,7 +16,7 @@ const byte DNS_PORT = 53;
 ESP8266WebServer server(80);
 
 #ifndef STASSID
-#define STASSID "Free Reading Wifi"
+#define STASSID "Digital Colouring Book" // ✨ set your network name here ✨
 #endif
 
 IPAddress apIP(192, 168, 4, 1);
@@ -36,6 +37,7 @@ void setup() {
   Serial.println(WiFi.softAPIP());
   
   //File system begin
+  // SPIFFS.begin(); -> deprecated
   LittleFS.begin();
 
 

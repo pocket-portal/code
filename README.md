@@ -1,3 +1,1 @@
-## Spread ideas with a pocket wi-fi portal
-
-https://iffybooks.net/pocket-wifi-portal/
+In this hands-on workshop, you'll turn a WEMOS D1 Mini board into a portable access point that can broadcast custom web pages to nearby devices (without actually connecting to WI-FI 😉). Join us as we explore the potential of captive portals for unique and unconventional site-specific interventions.
