@@ -161,3 +161,88 @@ It's certainly possible to make use of certain additional resources for your poc
 - Test early, often, and across devices and operating systems whenever possible.
 
 
+# 3-Pocket_Portal--Colouring_Page (under construction!)
+
+Create, commission, or find a copyleft line illustration to use for the colouring page. This drawing should, ideally, be in `.svg` format, but if it isn't, fret not! Go to the next step to find out how to convert your image.
+
+If your image is already in `.svg` format, or in another vector format that can easily be converted to `.svg` (such as `.eps`, `.ai`, `.sketch`), skip to [Preparing your SVG](#preparing-your-svg).
+
+## Vectorizing a raster image
+
+If your drawing is in a raster graphic format (JPEG, PNG, etc.), you will need to vectorize it.
+
+Luckily, [Inkscape](https://inkscape.org/), a free, open-source, and cross-platform vector graphics editor, provides a myriad of options for vectorization.
+
+To do so:
+
+1. Open the Inkscape app.
+
+2. In the menu, go to `File > Import...` or press `CTRL + I`. Select your raster graphic to load it inside your document.
+
+3. To resize your document to fit the image, go to `File > Document Properties`. Go to the `Display` tab, select your image on the canvas, and then select "Resize to content" in the `Document Properties` panel (right above "Scale".).
+
+4. Select your illustration, then, in the menu, go to `Path > Trace Bitmap`. A panel will appear with [various settings documented here](https://inkscape-manuals.readthedocs.io/en/latest/tracing-an-image.html).
+
+5. For a line drawing, "Brightness cutoff" with the default settings is a good start. The better the image quality, the better the result.
+
+6. Once you're satisfied with the settings, hit "Apply". The vectorized drawing will appear over the original image, and will be selected. Set it aside, and inspect the result. Repeat steps 4-5 until you get the result you want.
+
+7. Delete the original image, and align the image to the center of the document. The lines should be black, and what was previously white should be transparent. Save your work as an `.svg`.
+
+
+## Preparing your SVG for the Coloring Page
+
+You will need to create two layers inside of your `.svg` illustrations: a top one for the black lines, and a bottom one for the white background.
+
+To do so, open the file in the editor of your chocie. The following steps are done using [Inkscape](https://inkscape.org/), a free, open-source, and cross-platform vector graphics editor.
+
+1. Open your illustration in Inkscape.
+
+2. <mark>Add a rectangle with a black outline to close/create shapes of elements that "dépassent" the edge of the document, making sure it's inside the bounding box. Bring the border to the top, and turn the border into a path.</mark>
+
+3. <mark>Add a white rectangle below the border and black lines. Select the black lines and white background. In the menu, go to Path > Exclusion. You'll notice that the paths combined to create a cutout: The black outline becomes transparent, and the white remains (hollowed out), essentially designating what will be coloured in. Select the black border and white cutout. In the menu, select Path > Intersection.</mark>
+
+4. <mark>Create a Layer or Group for the hollow white part, and give the grouping a memorable name (i.e. "Colour"). Select the hollow white path object, and in the menu, select `Object > Break Apart`. Test to see if it works: select a fragment of your illustration, and see if it can be moved independently from the rest. These sections will be grouped together for colouring in your colouring page.</mark>
+
+5. <mark>Once satisfied, add a black rectangle at the bottom to act like the lines. Create a distinct Layer or Group for that background as you've done in Step 4.</mark>
+
+6. Once complete, save the document. In the menu, go to `File > Export...` or `CTRL + SHIFT + E`. Select `Plain SVG` as the format, and export the file.
+
+## Adding the vector illustration to the coloring page
+
+1. In the text editor of your choice (VS Code / VS Codium / Notepad++ / etc.) open the `.svg` file. Select all the contents of the file, and copy them.
+   
+2. Open the `data` folder for this project in the text editor. Open the `index.html` file, and find the area where the example SVG drawing starts and ends. Remove the existing image, and paste the text you copied in step 1.
+
+  ```html
+  <div id="main">
+    <!-- 🔄 SVG Drawing starts here -->
+    ...
+    <!-- 🔄 SVG Drawing ends here -->
+  </div>
+  ```
+
+3. In your SVG markup, there should be two SVG groups, designated with a `<g>` tag. The first one should be your black rectangle. The second one will contain all the paths for the hollowed white fragments. Copy the ID value for this 2nd group. In this project example, the group appears as such and has the ID `colour`:
+
+```html
+<g id="colour" style="display:inline">
+        <path style="display:inline;fill:#ffffff;fill-rule:evenodd;stroke-width:0.0217255;stroke-linecap:square;
+```
+
+4. Open colouringbook.js, and replace the value of the `svgID` variable with the group's ID value. Here's how this looks for this project example:
+
+```js
+var svgID = "colour";
+```
+
+5. To have the illustration take up the width of the screen, open the `index.html` file and set the SVG illustration's `width` to `100%` and `height` to `auto`. Here's how this looks in the project example:
+
+```html
+ <svg width="100%" height="auto" viewBox="0 0 150.16163 211.66666" version="1.1" id="svg1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+```
+
+# 4-Pocket_Portal--Music_Playlist_Mixtape (coming soon!)
+
+# 5-Pocket_Portal--Video_Interactive_Transcript (coming soon!)
+
+# 6-Pocket_Portal--Eliza_Chatbot (coming soon!)
