@@ -83,7 +83,7 @@ To use your own media on the page (images, audio, video), copy the file(s) over 
 Then, use the appropriate HTML tag, and use the media's relative path as the `src=""`:
 
 ```html
-  <video controls src="video.mp4" type="video/mp4"></video>
+<video controls src="video.mp4" type="video/mp4"></video>
 ```
 
 ```html
