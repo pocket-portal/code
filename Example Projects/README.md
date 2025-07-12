@@ -163,7 +163,7 @@ It's certainly possible to make use of certain additional resources for your poc
 
 # 3-Pocket_Portal--Colouring_Page (under construction!)
 
-Create, commission, or find a copyleft line illustration to use for the colouring page. This drawing should, ideally, be in `.svg` format, but if it isn't, fret not! Go to the next step to find out how to convert your image.
+Create, commission, or find a creative commons line illustration to use for the colouring page. This drawing should, ideally, be in `.svg` format, but if it isn't, fret not! Go to the next step to find out how to convert your image.
 
 If your image is already in `.svg` format, or in another vector format that can easily be converted to `.svg` (such as `.eps`, `.ai`, `.sketch`), skip to [Preparing your SVG](#preparing-your-svg).
 
@@ -241,8 +241,6 @@ var svgID = "colour";
  <svg width="100%" height="auto" viewBox="0 0 150.16163 211.66666" version="1.1" id="svg1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 ```
 
-# 4-Pocket_Portal--Music_Playlist_Mixtape (coming soon!)
+# 4-Pocket_Portal--Music_Player
 
-# 5-Pocket_Portal--Video_Interactive_Transcript (coming soon!)
-
-# 6-Pocket_Portal--Eliza_Chatbot (coming soon!)
+# 5-Pocket_Portal--Eliza_Chatbot

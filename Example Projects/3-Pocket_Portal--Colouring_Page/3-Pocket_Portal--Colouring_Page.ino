@@ -16,7 +16,7 @@ const byte DNS_PORT = 53;
 ESP8266WebServer server(80);
 
 #ifndef STASSID
-#define STASSID "A Digital Colouring Book" // ✨ set your network name here ✨
+#define STASSID "A Digital Colouring Book" // ✨ set your network name here (max 31 characters) ✨
 #endif
 
 IPAddress apIP(192, 168, 4, 1);
@@ -28,7 +28,8 @@ void setup() {
 
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
-  WiFi.softAP(ssid);
+  WiFi.softAP(ssid, "", 1); //✨ Working with many devices? Change the last number value to assign a different channel to reduce interference (1, 6, or 11) ✨
+  // WiFi.softAP(ssid, "", 1, false, 8); // if you want to increase the limit of devices that can connect to this access point, un-comment this line to allow up to 8 devices
   dnsServer.start(DNS_PORT, "*", apIP); // redirect dns request to AP ip
   
   MDNS.begin("esp8266", WiFi.softAPIP());
@@ -72,6 +73,7 @@ else if(filename.endsWith(".jpg")) return "image/jpeg";
 else if(filename.endsWith(".ico")) return "image/x-icon";
 else if(filename.endsWith(".xml")) return "text/xml";
 else if(filename.endsWith(".mp4")) return "video/mp4";
+else if(filename.endsWith(".mp3")) return "audio/mpeg";
 else if(filename.endsWith(".pdf")) return "application/x-pdf";
 else if(filename.endsWith(".zip")) return "application/x-zip";
 else if(filename.endsWith(".gz")) return "application/x-gzip";

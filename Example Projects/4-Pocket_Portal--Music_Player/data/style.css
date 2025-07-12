@@ -1,0 +1,127 @@
+/* ⬇✨ Setting the style variables ⬇✨ */
+
+:root {
+  /*colours*/
+    --background-colour: #f0f0f0;
+    --player-colour: #fff;
+    --text-colour: #333;
+    --accent-colour: #78c0a8;
+
+  /*fonts*/
+    --title-font: Basteleurs, sans-serif;
+    --sans-serif-font: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+    "Segoe UI Emoji", "Segoe UI Symbol";
+    --serif-font: Georgia, ui-serif, serif;
+
+  /*layout*/
+    --page-width: 60ch;
+    --padding: 2em;
+    --border-radius: 10px;
+}
+
+@font-face {
+  font-family: "Basteleurs";
+  font-weight: normal;
+  font-style: normal;
+  src:
+    url("Basteleur-Moonlight.woff") format("woff");
+}
+
+body {
+  font-family: var(--sans-serif-font);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--padding);
+  background-color: var(--background-colour);
+}
+
+.player-container {
+  background: var(--player-colour);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: var(--padding);
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-colour);
+  margin-bottom: calc(var(--padding)/2);
+  font-family: var(--title-font);
+}
+
+.song-item {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  margin-bottom: var(--padding);
+  transition: background-color 0.3s ease;
+}
+
+.song-item:hover {
+  background-color: #e9e9e9;
+}
+
+.song-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: var(--padding);
+  gap: calc(var(--padding)/2);
+}
+
+.song-title {
+  font-weight: bold;
+  color: var(--text-colour);
+}
+
+.song-artist {
+  color: var(--text-colour);
+  opacity: 0.75;
+  font-size: 0.9em;
+}
+
+.song-duration {
+  color: var(--text-colour);
+  opacity: 0.50;
+  font-size: 0.8em;
+}
+
+/* Styling the audio player */
+audio {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border-radius: calc(var(--border-radius)*2);
+}
+
+/* Custom styling for audio controls (limited cross-browser support) */
+audio::-webkit-media-controls-panel {
+  background-color: rgba(0,0,0,0.1);
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button {
+  background-color: var(--accent-colour);
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: var(--text-colour);
+}
+
+/* adding some visual feedback when clicking inside a song */
+.song-item:focus-within {
+  border-color: var(--accent-colour);
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.credits {
+  color: var(--text-colour);
+  opacity: 0.50;
+  text-align: center;
+  font-size: 0.8em;
+}
