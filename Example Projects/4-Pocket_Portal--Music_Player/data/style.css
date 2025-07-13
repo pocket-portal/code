@@ -52,8 +52,8 @@ h1 {
 }
 
 .song-item {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.024);
+  border: 1px solid rgba(0, 0, 0, 0.133);
   border-radius: var(--border-radius);
   padding: var(--padding);
   margin-bottom: var(--padding);
@@ -61,7 +61,7 @@ h1 {
 }
 
 .song-item:hover {
-  background-color: #e9e9e9;
+  background-color: rgba(0, 0, 0, 0.086);
 }
 
 .song-info {
