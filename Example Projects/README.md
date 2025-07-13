@@ -19,8 +19,16 @@ Give it a try!
 
 # 2-Pocket_Portal--Simple_Page
 
-This example hosts a simple, one page website to your WEMOS D1 Mini.
+![](https://i.imgur.com/nQq1PGC.gif)
 
+This example hosts a simple web page to get you started.
+
+It includes headings, text, an image, an audio clip, video clip, and even an SMS link which can open the user's text app with pre-populated text
+
+## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/2-Pocket_Portal--Simple_Page/data/index.html)
+
+<details>
+<summary>Instructions</summary>
 You will find the code for the server (`.ino` sketch file, `DNSServer.cpp`, and `DNSServer.h`) as well as the static site files inside of the data folder.
 
 To edit the SSID network name, open the `.ino` sketch file in Arduino, find the `STASSID` macro and edit its value between double quotes. In the example, the SSID is set to "Come in, grab a seat":
@@ -159,10 +167,19 @@ It's certainly possible to make use of certain additional resources for your poc
 - Be mindful of the size of these additionnal files in relation to your board's storage capacity, and their impact on the page load.
 - Remove spaces from the file names.
 - Test early, often, and across devices and operating systems whenever possible.
+</details>
 
 
-# 3-Pocket_Portal--Colouring_Page (under construction!)
+# 3-Pocket_Portal--Colouring_Page
 
+A digital colouring page to pass the time.
+
+![](https://i.imgur.com/JNEba4v.gif)
+
+## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/3-Pocket_Portal--Colouring_Page/data/index.html)
+
+<details>
+<summary>Instructions</summary>
 Create, commission, or find a creative commons line illustration to use for the colouring page. This drawing should, ideally, be in `.svg` format, but if it isn't, fret not! Go to the next step to find out how to convert your image.
 
 If your image is already in `.svg` format, or in another vector format that can easily be converted to `.svg` (such as `.eps`, `.ai`, `.sketch`), skip to [Preparing your SVG](#preparing-your-svg).
@@ -240,7 +257,17 @@ var svgID = "colour";
 ```html
  <svg width="100%" height="auto" viewBox="0 0 150.16163 211.66666" version="1.1" id="svg1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
 ```
+</details>
 
 # 4-Pocket_Portal--Music_Player
 
+![](https://i.imgur.com/HAF35Vy.png)
+
+## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/4-Pocket_Portal--Music_Player/data/index.html)
+
+
 # 5-Pocket_Portal--Eliza_Chatbot
+
+![](https://i.imgur.com/yJMNruG.png)
+
+## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/5-Pocket_Portal--Eliza_Chatbot/data/index.html)
