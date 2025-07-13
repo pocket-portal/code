@@ -3,3 +3,10 @@ In this hands-on workshop, you'll turn a WEMOS D1 Mini board into a portable acc
 For instructions on how to use this code, [read the zine](https://raw.githubusercontent.com/pocket-portal/zine/refs/heads/main/Pocket%20Portal%20Power%20Play%20-%20digital%20-%20(v2).pdf).
 
 ## [📥 Download the code](https://github.com/pocket-portal/code/archive/refs/heads/main.zip)
+
+## What you'll need:
+- Computer
+- Wemos D1 Mini (4MB) or Wemos D1 Mini Pro (16 MB)
+- MicroUSB cable (one that can transfer data)
+- [Arduino IDE](https://www.arduino.cc/en/software/) (integrated development environment), which is the application you'll use to program your Wemos D1 mini.
+- Source-code editor of your choice, which you’ll use to edit your site files. (I like [VS Codium](https://vscodium.com/) and [Notepad++](https://notepad-plus-plus.org/))
