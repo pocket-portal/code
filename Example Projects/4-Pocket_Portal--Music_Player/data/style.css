@@ -2,10 +2,10 @@
 
 :root {
   /*colours*/
-    --background-colour: #f0f0f0;
-    --player-colour: #fff;
+    --background-colour: #FFFEF6;
+    --player-colour: #FFE54E;
     --text-colour: #333;
-    --accent-colour: #78c0a8;
+    --accent-colour: #a164eb;
 
   /*fonts*/
     --title-font: Basteleurs, sans-serif;
