@@ -19,7 +19,7 @@ Give it a try!
 
 # 2-Pocket_Portal--Simple_Page
 
-![](https://i.imgur.com/nQq1PGC.gif)
+![Scroll through of the simple web page example](https://i.imgur.com/nQq1PGC.gif)
 
 This example hosts a simple web page to get you started.
 
@@ -28,7 +28,8 @@ It includes headings, text, an image, an audio clip, video clip, and even an SMS
 ## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/2-Pocket_Portal--Simple_Page/data/index.html)
 
 <details>
-<summary>Instructions</summary>
+<summary><h2>Instructions</h2></summary>
+
 You will find the code for the server (`.ino` sketch file, `DNSServer.cpp`, and `DNSServer.h`) as well as the static site files inside of the data folder.
 
 To edit the SSID network name, open the `.ino` sketch file in Arduino, find the `STASSID` macro and edit its value between double quotes. In the example, the SSID is set to "Come in, grab a seat":
@@ -49,7 +50,7 @@ To edit the actual site, open the `data` folder with VS Code / VS Codium / the t
     └── style.css
 ```
 
-## Content Overview
+### Content Overview
 
 The `index.html` gives you some basic building blocks to build your page's content:
 
@@ -62,7 +63,7 @@ The `index.html` gives you some basic building blocks to build your page's conte
 - Blockquote: `<blockquote>`
 - Example of an SMS link which can open the user's text app with pre-populated text using an `<a>` tag
 
-### Text and Headings
+#### Text and Headings
 
 To create a new heading or paragraph, make sure to wrap the text with the appropriate HTML tag:
 
@@ -82,7 +83,7 @@ To create a new heading or paragraph, make sure to wrap the text with the approp
 <p>This is a paragraph.</p>
 ```
 
-### Media: Photos, Audio, Video
+#### Media: Photos, Audio, Video
 
 To use your own media on the page (images, audio, video), copy the file(s) over to the `data` folder; it can even be inside of a subdirectory, so long as its inside `data`.
 
@@ -104,7 +105,7 @@ Then, use the appropriate HTML tag, and use the media's relative path as the `sr
 
 Using `.mp3` for audio, `.mp4` for video, and `.png`, `.jpg`, `.gif` for images are safe bets, compatibility-wise.
 
-### SMS
+#### SMS
 
 Want people to text you "LIMBO" to RSVP to the block party? Want to showcase your transit system's automated SMS bus schedule? Do it with an SMS link!
 
@@ -118,7 +119,7 @@ In the example below, the text `(555) 555-5555` will be hyperlinked:
 
 Upon clicking on the link, the user's texting app will create a draft message saying "Thank you!" to be sent to the phone number 5555555555.
 
-## Styling
+### Styling
 
 In the `style.css` file, you'll find some pre-made styling options.
 
@@ -128,7 +129,7 @@ The variables are declared at the `:root` like `--this`, and are reused later in
 
 To quickly and consistently customize the styling of the page, simply tweak the variable values at the root.
 
-### Colours
+#### Colours
 
 For instance, to change the colour of the page background to Deep Sky Blue, edit its variable to this:
 
@@ -136,19 +137,19 @@ For instance, to change the colour of the page background to Deep Sky Blue, edit
   --background-colour: DeepSkyBlue;
 ```
 
-or this:
+or a HEX code like this:
 
 ```css
   --background-colour: #00BFFF;
 ```
 
-or this:
+or an RGB value like this:
 
 ```css
   --background-colour: rgb(0, 191, 255);
 ```
 
-### Fonts
+#### Fonts
 
 The project makes use of serif and sans-serif web safe fonts, rather than loading custom font files. Web safe fonts are widely available across different operating systems and web browsers, and numerous fallbacks are in place:
 
@@ -158,7 +159,7 @@ The project makes use of serif and sans-serif web safe fonts, rather than loadin
 
 For example, if the device doesn't have "ui-sans-serif" installed, the next available font will be displayed.
 
-## Extras: JavaScript, Stylesheets, etc.
+### Extras: JavaScript, Stylesheets, etc.
 
 This project doesn't make use of JavaScript libraries, font files, or additionnal stylesheets, but that doesn't mean you can't!
 
@@ -174,40 +175,41 @@ It's certainly possible to make use of certain additional resources for your poc
 
 A digital colouring page to pass the time.
 
-![](https://i.imgur.com/JNEba4v.gif)
+![Digital coolouring page bring filled in](https://i.imgur.com/JNEba4v.gif)
 
 ## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/3-Pocket_Portal--Colouring_Page/data/index.html)
 
 <details>
-<summary>Instructions</summary>
-Create, commission, or find a creative commons line illustration to use for the colouring page. This drawing should, ideally, be in `.svg` format, but if it isn't, fret not! Go to the next step to find out how to convert your image.
+<summary><h2>Instructions</h2></summary>
 
-If your image is already in `.svg` format, or in another vector format that can easily be converted to `.svg` (such as `.eps`, `.ai`, `.sketch`), skip to [Preparing your SVG](#preparing-your-svg).
+To get started, you'll need a line illustration to use for the colouring page. This could be something that you've created, commissioned, or found online with a creative commons license. This drawing should, ideally, be in `.svg` format, but if it isn't, fret not! Go to the next step to find out how to convert your image.
 
-## Vectorizing a raster image
+If your image is already in `.svg` format, or in another vector format that can easily be converted to `.svg` (such as `.eps`, `.ai`, `.sketch`), skip to [Preparing your SVG](#Preparing-your-SVG-for-the-Coloring-Page).
+
+### Vectorizing a raster image
 
 If your drawing is in a raster graphic format (JPEG, PNG, etc.), you will need to vectorize it.
 
-Luckily, [Inkscape](https://inkscape.org/), a free, open-source, and cross-platform vector graphics editor, provides a myriad of options for vectorization.
+Luckily, you can easily do this with [Inkscape](https://inkscape.org/), a free, open-source, and cross-platform vector graphics editor.
 
 To do so:
 
 1. Open the Inkscape app.
 
-2. In the menu, go to `File > Import...` or press `CTRL + I`. Select your raster graphic to load it inside your document.
+2. In the menu, go to `File > Import...` or press `CTRL + I`. Select your raster graphic illustration to load it inside your document.
 
 3. To resize your document to fit the image, go to `File > Document Properties`. Go to the `Display` tab, select your image on the canvas, and then select "Resize to content" in the `Document Properties` panel (right above "Scale".).
 
-4. Select your illustration, then, in the menu, go to `Path > Trace Bitmap`. A panel will appear with [various settings documented here](https://inkscape-manuals.readthedocs.io/en/latest/tracing-an-image.html).
+4. Select your illustration. Then, in the menu, go to `Path > Trace Bitmap`. A panel will appear with [various settings documented here](https://inkscape-manuals.readthedocs.io/en/latest/tracing-an-image.html).
 
 5. For a line drawing, "Brightness cutoff" with the default settings is a good start. The better the image quality, the better the result.
 
-6. Once you're satisfied with the settings, hit "Apply". The vectorized drawing will appear over the original image, and will be selected. Set it aside, and inspect the result. Repeat steps 4-5 until you get the result you want.
+6. Once you're satisfied with the settings, hit "Apply". The vectorized drawing will appear over the original image, and will be selected. Set it aside, and inspect the result. If you don't like the initial results, repeat steps 4-5 until you're satisfied.
 
 7. Delete the original image, and align the image to the center of the document. The lines should be black, and what was previously white should be transparent. Save your work as an `.svg`.
 
 
-## Preparing your SVG for the Coloring Page
+### Preparing your SVG for the Coloring Page
 
 You will need to create two layers inside of your `.svg` illustrations: a top one for the black lines, and a bottom one for the white background.
 
@@ -215,7 +217,7 @@ To do so, open the file in the editor of your chocie. The following steps are do
 
 1. Open your illustration in Inkscape.
 
-2. <mark>Add a rectangle with a black outline to close/create shapes of elements that "dépassent" the edge of the document, making sure it's inside the bounding box. Bring the border to the top, and turn the border into a path.</mark>
+2. <mark>Add a rectangle with a black outline to close/create shapes of elements that stick out beyond the edge of the document. Make sure the rectangle is inside the bounding box. Bring the border to the top, and turn the border into a path.</mark>
 
 3. <mark>Add a white rectangle below the border and black lines. Select the black lines and white background. In the menu, go to Path > Exclusion. You'll notice that the paths combined to create a cutout: The black outline becomes transparent, and the white remains (hollowed out), essentially designating what will be coloured in. Select the black border and white cutout. In the menu, select Path > Intersection.</mark>
 
@@ -225,7 +227,7 @@ To do so, open the file in the editor of your chocie. The following steps are do
 
 6. Once complete, save the document. In the menu, go to `File > Export...` or `CTRL + SHIFT + E`. Select `Plain SVG` as the format, and export the file.
 
-## Adding the vector illustration to the coloring page
+### Adding the vector illustration to the coloring page
 
 1. In the text editor of your choice (VS Code / VS Codium / Notepad++ / etc.) open the `.svg` file. Select all the contents of the file, and copy them.
    
@@ -261,13 +263,145 @@ var svgID = "colour";
 
 # 4-Pocket_Portal--Music_Player
 
-![](https://i.imgur.com/HAF35Vy.png)
+Share your favourite jams with nearby devices. 🎵
+
+![Music player page](https://i.imgur.com/HAF35Vy.png)
 
 ## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/4-Pocket_Portal--Music_Player/data/index.html)
+
+<details>
+<summary><h2>Instructions</h2></summary>
+
+### Adding your music
+
+1. Add your music files tto the `data` > `audio` folder.
+
+2. Open the `index.html` in the code text editor of your choice, and edit/add the `<div class="song-item">` for each of your songs:
+
+   The song title: `<div class="song-title">TITLE</div>`
+
+   The artist: `<div class="song-artist">ARTIST</div>`
+
+   The duration: `<div class="song-duration">00:00</div>`
+
+   The location of the song's file: `<audio controls preload="auto">
+                <source src="audio/FILENAME.mp3" type="audio/mpeg">
+            </audio>`
+
+   All together:
+   ```html
+   <div class="song-item">
+      <div class="song-info">
+          <div>
+              <div class="song-title">TITLE</div>
+              <div class="song-artist">ARTIST</div>
+          </div>
+          <div class="song-duration">00:00</div>
+      </div>
+      <audio controls preload="auto">
+          <source src="audio/FILENAME.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+  </div>
+   ```
+
+
+### Styling the page
+
+In the `style.css` file, you'll find some pre-made styling options.
+
+To make customization easier, I've made use of reusable CSS variables.
+
+The variables are declared at the `:root` like `--this`, and are reused later in the stylesheet as such: `var(--variable-in-use)`.
+
+To quickly and consistently customize the styling of the page, simply tweak the variable values at the root.
+
+#### Colours
+
+For instance, to change the colour of the page background to Deep Sky Blue, edit its variable to this:
+
+```css
+  --background-colour: DeepSkyBlue;
+```
+
+or a HEX code like this:
+
+```css
+  --background-colour: #00BFFF;
+```
+
+or an RGB value like this:
+
+```css
+  --background-colour: rgb(0, 191, 255);
+```
+
+#### Fonts
+
+The project makes use of serif and sans-serif web safe fonts, rather than loading custom font files. Web safe fonts are widely available across different operating systems and web browsers, and numerous fallbacks are in place:
+
+```css
+ --sans-serif-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+```
+
+For example, if the device doesn't have "ui-sans-serif" installed, the next available font will be displayed.
+
+</details>
 
 
 # 5-Pocket_Portal--Eliza_Chatbot
 
-![](https://i.imgur.com/yJMNruG.png)
+If you want to host a self-contained chatbot right inside your portal, this one's for you! It's inspired by [ELIZA](https://en.wikipedia.org/wiki/ELIZA), an early NLP program, and is based on code and design by [Masswerk](https://www.masswerk.at/elizabot/) and [cargo.site](https://cargo2support.cargo.site/Add-a-Chatbot).
+
+![chat conversation between human and ELIZA](https://i.imgur.com/yJMNruG.png)
+
 
 ## [Live Demo](https://pocket-portal.github.io/code/Example%20Projects/5-Pocket_Portal--Eliza_Chatbot/data/index.html)
+
+<details>
+<summary><h2>Instructions</h2></summary>
+
+### Changing phrases
+
+To edit ELIZA's stock phrases, open and edit the `data` > `scripts` > `elizadata.js` file in the code text editor of your choice.
+
+### Styling the chat
+
+In the `style.css` file, you'll find some pre-made styling options.
+
+To make customization easier, I've made use of reusable CSS variables.
+
+The variables are declared at the `:root` like `--this`, and are reused later in the stylesheet as such: `var(--variable-in-use)`.
+
+To quickly and consistently customize the styling of the page, simply tweak the variable values at the root.
+
+#### Colours
+
+For instance, to change the colour of the page background to Deep Sky Blue, edit its variable to this:
+
+```css
+  --background-colour: DeepSkyBlue;
+```
+
+or a HEX code like this:
+
+```css
+  --background-colour: #00BFFF;
+```
+
+or an RGB value like this:
+
+```css
+  --background-colour: rgb(0, 191, 255);
+```
+
+#### Fonts
+
+The project makes use of serif and sans-serif web safe fonts, rather than loading custom font files. Web safe fonts are widely available across different operating systems and web browsers, and numerous fallbacks are in place:
+
+```css
+ --sans-serif-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+```
+
+For example, if the device doesn't have "ui-sans-serif" installed, the next available font will be displayed.
+</details>
